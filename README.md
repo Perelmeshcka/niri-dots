@@ -12,8 +12,8 @@ Niri setup based on Catppuccin Mocha color palette
 -   Menu: *rofi*
 
 ## Links
-- Telegram theme you can find here: 
-- Beautiful wallpapers you can find here:
+- Telegram theme you can find here: [link](https://github.com/catppuccin/telegram)
+- Beautiful wallpapers you can find here: [link](https://github.com/zhichaoh/catppuccin-wallpapers)
 - Gtk themes and Bibata cursor theme you can download from AUR
 
 ---
