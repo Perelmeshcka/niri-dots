@@ -1,0 +1,16 @@
+#!/bin/bash
+
+WP_DIR=/home/yarik/Images
+
+function select_wp {
+  for img in "$WP_DIR"/*.png; do
+      name=$(basename "$img")
+      printf "%s\x00icon\x1f%s\n" "$name" "$img"
+  done | fuzzel --dmenu --prompt="WP: "
+}
+
+selection=$(select_wp)
+
+[ -z "$selection" ] && exit 0
+
+awww img "$WP_DIR/$selection" --transition-type random

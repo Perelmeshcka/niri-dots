@@ -1,0 +1,11 @@
+#!/bin/bash
+
+WP_DIR=$HOME/Images
+
+function select_wp {
+    for img in "$WP_DIR"/*.png; do
+        printf "%s\x00icon\x1f%s\n" "$img" "$img"
+    done | wofi --show dmenu --allow-images --columns 5 --width 1200 --height 300 --prompt "wallpaper"
+}
+
+awww img "$WP_DIR/$(select_wp)" --transition-type random

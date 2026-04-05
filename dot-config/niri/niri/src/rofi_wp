@@ -1,0 +1,13 @@
+#!/bin/bash
+
+WP_DIR=/home/yarik/Images
+ROFI_CONFIG=/home/yarik/.config/rofi/wallpapers.rasi
+
+function select_wp {
+  for img in $WP_DIR/*.png; do
+      name=$(basename "$img")
+      printf "%s\x00icon\x1f%s\n" "$name" "$img"
+  done | rofi -dmenu -show-icons -p "WP: " --config $ROFI_CONFIG
+}
+
+awww img "$WP_DIR/$(select_wp)" --transition-type random
