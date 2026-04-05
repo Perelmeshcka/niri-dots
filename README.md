@@ -9,7 +9,7 @@ Niri setup based on Catppuccin Mocha color palette
 -   Wallpaper Engine: *awww*
 -   Bar: *waybar*
 -   Editor: *helix*
--   Menu: *rofi*
+-   Menu: *fuzzel*
 
 ## Links
 - Telegram theme you can find here: [link](https://github.com/catppuccin/telegram)
@@ -22,7 +22,7 @@ Niri setup based on Catppuccin Mocha color palette
 
 + Download packages:
 ```bash
-pacman -S fish kitty niri starship waybar helix rofi awww 
+pacman -S fish kitty niri starship waybar helix fuzzel awww 
 ```
 
 + Set up shell:
