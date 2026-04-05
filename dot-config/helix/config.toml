@@ -1,0 +1,22 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+color-modes = true
+
+[editor.statusline]
+left = ["mode", "file-modification-indicator"]
+center = ["file-name", "version-control"]
+right = ["diagnostics", "selections", "register", "position"]
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.insert]
+C-c = "normal_mode"
+C-f = ":format"

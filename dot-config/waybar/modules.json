@@ -1,0 +1,321 @@
+//  __  __           _       _            
+// |  \/  | ___   __| |_   _| | ___  ___  
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __| 
+// | |  | | (_) | (_| | |_| | |  __/\__ \ 
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
+//                                        
+//  
+// by Stephan Raabe (2023) 
+// ----------------------------------------------------- 
+//
+{
+    // Workspaces
+    "niri/workspaces" : {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+    			"urgent": "",
+    			"active": "",
+    			"default": ""
+        },
+        "persistent-workspaces": {
+            // START WORKSPACES
+            "*": 5
+            // END WORKSPACES
+        }       
+    },
+
+    // Taskbar
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+
+    // niri Window
+    "niri/window": {
+        "rewrite": {
+            "(.*) - Brave": "$1",
+            "(.*) - Chromium": "$1",
+            "(.*) - Brave Search": "$1",
+            "(.*) - Outlook": "$1",
+            "(.*) Microsoft Teams": "$1"
+        },
+        "separate-outputs": true
+    },
+
+    // Empty
+    "custom/cat": {
+        "format": " ",
+		"on-click": "sh ~/.config/hypr/src/set-wallpaper.sh ~/Images/cat.jpg"
+    },
+    
+    // Cliphist
+    "custom/cliphist": {
+        "format": "",
+        "on-click": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh",
+        "on-click-right": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh w",
+        "tooltip": false
+    },
+
+    // Filemanager Launcher
+    "custom/filemanager": {
+        "format": "",
+        "on-click": "dolphin",
+        "tooltip": false
+    },
+
+    // Calculator
+    "custom/calculator": {
+        "format": "",
+        "on-click": "qalculate-gtk",
+        "tooltip": false
+    },
+
+    // Wofi Application Launcher
+    "custom/appmenu": {
+        // START APPS LABEL
+        "format": "󰣇",
+        // END APPS LABEL
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+
+    // Wofi Application Launcher
+    "custom/appmenuicon": {
+        "format": "󰮤",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },    
+
+    // Power Menu
+    "custom/exit": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    // Keyboard State
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    // System tray
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    // Clock
+    "clock": {
+        // TIMEDATEFORMAT
+        "format": "  {:%H:%M %a}",
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // START CLOCK FORMAT
+        "format-alt": "󰸗 {:%Y-%m-%d}"
+        // END CLOCK FORMAT
+    },
+
+    // System
+    "custom/system": {
+        "format": "",
+        "tooltip": false
+    },
+
+    // CPU
+    "cpu": {
+        "format": " {usage}%",
+        "on-click": "kitty -T VPN htop"
+    },
+
+    // Memory
+    "memory": {
+        "format": "Mem {}% ",
+        "on-click": "alacritty -e htop"
+    },
+
+    // Harddisc space used
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "on-click": "alacritty -e htop"
+    }, 
+
+    "niri/language": {
+        // "format": "  {short}",
+		"format-en": "󰇁",
+		"format-ru": "󰆱",
+		"format-by": "󰆬",
+		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+		"on-click-right": "hyprctl switchxkblayout at-translated-set-2-keyboard prev"
+    },
+
+    // Group Hardware
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "cpu",
+			"disk",
+			"battery",
+            "backlight"
+        ]
+    },
+    
+    // Group Settings
+    "group/settings": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/settings",
+        ]
+    },
+
+    // Group Quicklinks
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/filemanager",
+         ]
+    },
+
+    // Network
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{icon} ",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname} via {gwaddri}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": "{ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "sh ~/bin/wifimenu"
+    },
+
+    // Battery
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+		"interval": 3,
+        "format": "{icon}",
+        "format-charging": "{icon}",
+        "format-plugged": " ",
+        "format-alt": "{icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+		"tooltip-format": "{capacity}%"
+    },
+
+    // Pulseaudio
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "󰖁",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": "",
+            "headset": "󰋎",
+            "phone": " ",
+            "portable": " ",
+            "car": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    // Bluetooth
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+		"format-connected": "󰂱",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
+    },
+
+    // Other
+    "user": {
+        "format": "{user}",
+        "interval": 60,
+        "icon": false,
+    },
+
+    // Idle Inhibator
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "tooltip": true,
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        },
+        "on-click-right": "hyprlock"        
+    },
+
+	"temperature": {
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": ["", "", "", "", ""]
+	},
+
+	"custom/notifications": {
+		"exec": "swaync-client -swb",
+		"return-type": "json",
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "󰂚",
+            "none": "󰂜",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰪑",
+            "inhibited-notification": "󰂛",
+            "inhibited-none": "󰪑",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+		},
+		"on-click": "swaync-client -op"
+	},
+
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon}",
+		"tooltip-format": "{percent}%",
+		"format-icons": ["󰃚", "󰃛", "󰃜", "󰃞", "󰃟", "󰃝", "󰃠"]
+	},
+
+	"custom/vpn": {
+		"exec": "cat ~/.config/hypr/src/vpn-status",
+		"interval": 1,
+		"format": "{}",
+		"on-click": "kitty -T VPN sh ~/.config/hypr/src/vpn.sh"
+	}
+}

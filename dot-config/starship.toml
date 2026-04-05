@@ -1,0 +1,190 @@
+[character]
+success_symbol = "[ok](bold blue) >"
+error_symbol = "[er](bold purple) >"
+vimcmd_symbol = "[vi](bold yellow) >"
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[aws]
+symbol = "aws "
+
+[bun]
+symbol = "bun "
+
+[c]
+symbol = " "
+
+[cobol]
+symbol = "cobol "
+
+[conda]
+symbol = "conda "
+
+[cpp]
+symbol = " "
+
+[crystal]
+symbol = "cr "
+
+[cmake]
+symbol = " "
+
+[daml]
+symbol = "daml "
+
+[dart]
+symbol = "dart "
+
+[deno]
+symbol = "deno "
+
+[dotnet]
+symbol = ".NET "
+
+[directory]
+read_only = " ro"
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = "exs "
+
+[elm]
+symbol = "elm "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = "guix "
+
+[hg_branch]
+symbol = "hg "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = "jl "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[nodejs]
+symbol = "󰎙 "
+
+[memory_usage]
+symbol = "memory "
+
+[meson]
+symbol = "meson "
+
+[nim]
+symbol = "nim "
+
+[nix_shell]
+symbol = "nix "
+
+[ocaml]
+symbol = "ml "
+
+[opa]
+symbol = "opa "
+
+[os.symbols]
+Alpine = "alp "
+Amazon = "amz "
+Android = "andr "
+Arch = "󰣇 "
+CentOS = "cent "
+Debian = "deb "
+DragonFly = "dfbsd "
+Emscripten = "emsc "
+EndeavourOS = "ndev "
+Fedora = "fed "
+FreeBSD = "fbsd "
+Garuda = "garu "
+Gentoo = "gent "
+HardenedBSD = "hbsd "
+Illumos = "lum "
+Linux = "lnx "
+Macos = "mac "
+Manjaro = "mjo "
+Mariner = "mrn "
+MidnightBSD = "mid "
+Mint = "mint "
+NetBSD = "nbsd "
+NixOS = "nix "
+OpenBSD = "obsd "
+openSUSE = "osuse "
+OracleLinux = "orac "
+Pop = "pop "
+Raspbian = "rasp "
+Redhat = "rhl "
+RedHatEnterprise = "rhel "
+Redox = "redox "
+Solus = "sol "
+SUSE = "suse "
+Ubuntu = "ubnt "
+Unknown = "unk "
+Windows = "win "
+
+[package]
+symbol = "pkg "
+
+[perl]
+symbol = "pl "
+
+[php]
+symbol = "php "
+
+[pulumi]
+symbol = "pulumi "
+
+[purescript]
+symbol = "purs "
+
+[python]
+symbol = " "
+
+[raku]
+symbol = "raku "
+
+[ruby]
+symbol = "rb "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = "scala "
+
+[spack]
+symbol = "spack "
+
+[sudo]
+symbol = "sudo "
+
+[swift]
+symbol = "swift "
+
+[terraform]
+symbol = "terraform "
+
+[zig]
+symbol = "zig "
