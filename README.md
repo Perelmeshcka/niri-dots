@@ -4,6 +4,7 @@ Niri setup based on Catppuccin Mocha color palette
 ## Programs
 -   OS: *arch*
 -   Shell: *fish + starship*
+-   Terminal: *kitty*
 -   WM: *niri*
 -   Wallpaper Engine: *awww*
 -   Bar: *waybar*
@@ -21,7 +22,7 @@ Niri setup based on Catppuccin Mocha color palette
 
 + Download packages:
 ```bash
-pacman -S fish niri starship waybar helix rofi awww 
+pacman -S fish kitty niri starship waybar helix rofi awww 
 ```
 
 + Set up shell:
@@ -35,3 +36,14 @@ cd
 git clone https://github.com/Perelmeshcka/niri-dots.git
 cp -r niri-dots/dot-config/* .config/
 ```
+
+---
+
+# Screenshots
+![](screenshots/1.png)
+
+![](screenshots/2.png)
+
+![](screenshots/3.png)
+
+![](screenshots/4.png)
