@@ -6,7 +6,7 @@ function select_wp {
   for img in "$WP_DIR"/*.png; do
       name=$(basename "$img")
       printf "%s\x00icon\x1f%s\n" "$name" "$img"
-  done | fuzzel --dmenu # --prompt="WP: "
+  done | fuzzel --dmenu --selection-color 313244ff --selection-text-color cdd6f4ff --selection-match-color cba6f7ff # --prompt="WP: "
 }
 
 selection=$(select_wp)
